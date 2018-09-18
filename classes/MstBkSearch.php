@@ -175,6 +175,7 @@ class MstBkSearch {
     const BK_DATA_CITY = 'city';
     const BK_DATA_AREA = 'area';
     const BK_DATA_MAP = 'map';
+    const BK_DATA_MAPOPEN = 'is_open_map';
     const BK_DATA_MEDIA = 'media';
     const BK_DATA_YOUTUBE = 'youtube';
     const BK_DATA_THETA = 'theta';

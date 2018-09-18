@@ -27,7 +27,7 @@ $(function () {
         var resultData = $.parseJSON(dataString);
         $.ajax({
             type: "POST",
-            url: '/rent/bundle_dialog',
+            url: '/rent/bundle_dialog.php',
             data: resultData,
             success: function (htmlDat) {
                 $('.bundle-child-dialog').dialog({

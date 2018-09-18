@@ -13,7 +13,7 @@ include("../classes/SearchItemHelper.php");
     <form id="bkSearch" method="get" action="/sale/result.php" class="saleSearch jyoken">
         <div class="searchIndex">
             <div class="headTitle">
-                <div data-subtitle="SEARCH" class="h2">賃貸物件検索</div>
+                <div data-subtitle="SEARCH" class="h2">売買物件検索</div>
             </div>
             <div class="headBox">
                 <div class="search-decription">条件を指定して検索ボタンを押してください。選択せずに検索するとすべての物件が表示されます。</div>
@@ -222,7 +222,7 @@ include("../classes/SearchItemHelper.php");
                         <div class="col-lg-10 col-md-9 col-12">
                             <div class="inner">
                                 <ul class="main_created_within">
-                                    <?php $master = $searchManager->getBkSearchMaster($rentSaleStr, $searchManager::BK_DATA_NEWBILD); ?>
+                                    <?php $master = $searchManager->getBkSearchMaster($rentSaleStr, $searchManager::BK_DATA_NEWCOME); ?>
                                     <?php foreach($master['search'] as $value => $text) { ?>
                                     <li class="sub_created_within">
                                         <label class="form-control">

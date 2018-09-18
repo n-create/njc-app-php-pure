@@ -196,7 +196,7 @@ include("../classes/SearchItemHelper.php");
                         <div class="col-lg-10 col-md-9 col-12">
                             <div class="inner">
                                 <ul class="main_created_within">
-                                    <?php $master = $searchManager->getBkSearchMaster($rentSaleStr, $searchManager::BK_DATA_NEWBILD); ?>
+                                    <?php $master = $searchManager->getBkSearchMaster($rentSaleStr, $searchManager::BK_DATA_NEWCOME); ?>
                                     <?php foreach($master['search'] as $value => $text) { ?>
                                     <li class="sub_created_within">
                                         <label class="form-control">

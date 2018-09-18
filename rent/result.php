@@ -25,11 +25,11 @@ $rentSaleStr = RS_STR_RENT;
                 </button>
                 <div id="othersearch" class="collapse navbar-collapse">
                     <ul class="value nav navbar-nav">
-                        <li class="nav-item"><a href="/<?= $rentSaleStr; ?>/index" class="index nav-link">条件から検索</a></li>
-                        <li class="nav-item"><a href="/<?= $rentSaleStr; ?>/railway" class="railway nav-link">沿線・駅から検索</a></li>
-                        <li class="nav-item"><a href="/<?= $rentSaleStr; ?>/city" class="city nav-link">地域から検索</a></li>
-                        <li class="nav-item"><a href="/<?= $rentSaleStr; ?>/school" class="school nav-link">学校区から検索</a></li>
-                        <li class="nav-item"><a href="/<?= $rentSaleStr; ?>/map" class="map nav-link">地図から検索</a></li>
+                        <li class="nav-item"><a href="/<?= $rentSaleStr; ?>/search.php" class="index nav-link">条件から検索</a></li>
+                        <li class="nav-item"><a href="/<?= $rentSaleStr; ?>/railway.php" class="railway nav-link">沿線・駅から検索</a></li>
+                        <li class="nav-item"><a href="/<?= $rentSaleStr; ?>/city.php" class="city nav-link">地域から検索</a></li>
+                        <li class="nav-item"><a href="/<?= $rentSaleStr; ?>/school.php" class="school nav-link">学校区から検索</a></li>
+                        <li class="nav-item"><a href="/<?= $rentSaleStr; ?>/map.php" class="map nav-link">地図から検索</a></li>
                     </ul>
                 </div>
             </nav>

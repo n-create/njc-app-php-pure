@@ -28,7 +28,6 @@ include("../classes/SearchItemHelper.php");
                     <div class="inner">
                         <?php $master = $searchManager->getBkSearchMaster($rentSaleStr, $searchManager::BK_DATA_STATION); ?>
                         <?php foreach($master['search'] as $dataKey => $data) { ?>
-                        <ul class="main_line_numbers">
                         <?php
                            $parentText = $data['name'];
                            $group = $data['stations'];

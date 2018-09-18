@@ -47,7 +47,7 @@ include("../classes/SearchItemHelper.php");
                     </div>
                 </div>
                 <div class="mapBkContent col-6">
-                    <a href="/<?= $rentSaleStr ?>/detail/<?= $bkData[$searchManager::BK_DATA_ID]; ?>" title="<?= $bkImg[0]['comment']; ?>" target='_blank'>
+                    <a href="/<?= $rentSaleStr ?>/detail.php?id=<?= $bkData[$searchManager::BK_DATA_ID]; ?>" title="<?= $bkImg[0]['comment']; ?>" target='_blank'>
                         <div class="disp-list-item">
                             <div class="crui_name badge badge-dark">
                                 <?= (empty($bkData[$searchManager::BK_DATA_BILDTYPE]['value']) ? '-' : $bkData[$searchManager::BK_DATA_BILDTYPE]['value']); ?>
@@ -121,8 +121,8 @@ include("../classes/SearchItemHelper.php");
    ];
 ?>
 <?php foreach($script_files as $filePath) { ?>
-<script type="text/javascript" src="<?= $filePath; ?>?_=<?= date('Ymdhis'); ?>")</script>
+<script type="text/javascript" src="<?= $filePath; ?>?_=<?= date('Ymdhis'); ?>")></script>
 <?php } ?>
 <?php foreach($css_files as $filePath) { ?>
-<link rel="stylesheet" type="text/css" href!="<?= $filePath; ?>?_=<?= date('Ymdhis'); ?>"/>
+<link rel="stylesheet" type="text/css" href="<?= $filePath; ?>?_=<?= date('Ymdhis'); ?>"/>
 <?php } ?>

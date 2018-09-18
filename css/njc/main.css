@@ -501,6 +501,7 @@ img {
 /* line 366, resources/assets/sass/njc/_common.scss */
 .public-body .resultBox .bk-result-page-wrapper .bk-list-body .list-item .list-item-inner .bk-body .disp-contents a {
   color: #333333;
+  text-decoration: none;
 }
 
 /* line 378, resources/assets/sass/njc/_common.scss */
@@ -1791,6 +1792,7 @@ img {
   /* line 98, resources/assets/sass/njc/_full.scss */
   .public-body .mapMainPanel .mapSideSearch {
     position: relative;
+    width: 320px;
     max-width: 320px;
     height: calc(100vh - 56px);
   }

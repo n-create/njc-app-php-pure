@@ -346,7 +346,7 @@ class SearchItemHelper extends MstBkSearch {
     }
 
     public function getAndUnsetUrl($unsetKey) {
-        $get = $_GET;
+        $get = array_merge($_GET, $_POST);
         $url = $_SERVER['SCRIPT_NAME'];
         $temp = self::getAndUnsetParameter($get, $unsetKey);
         $url .= "?" . implode('&', $temp);
@@ -419,7 +419,7 @@ class SearchItemHelper extends MstBkSearch {
      */
     public function getMapZahyouData($rentSaleStr) {
         $jsonData = [];
-        $query = $_GET;
+        $query = array_merge($_GET, $_POST);
         $rKey = self::FROM_MASTER_DATA_NEW[self::BK_DATA_MAP];
         $url = self::_getSpecialSearchUrl($rentSaleStr, $rKey, self::BK_DATA_MAP);
         $param = [];
@@ -489,7 +489,7 @@ class SearchItemHelper extends MstBkSearch {
      *
      */
     public function getMapCityData($rentSaleStr) {
-        $query = $_GET;
+        $query = array_merge($_GET, $_POST);
         $rKey = self::FROM_MASTER_DATA_NEW[self::BK_DATA_CITY];
         $url = self::_getSpecialSearchUrl($rentSaleStr, $rKey, self::BK_DATA_CITY);
         $url .= "&map=1";
@@ -570,11 +570,6 @@ class SearchItemHelper extends MstBkSearch {
      */
     public function getBkResultData($rentSaleStr) {
         $result = [];
-        $query = $_GET;
-        $limit = 9;
-        if(isset($query['limit'])) {
-            $limit = $query['limit'];
-        }
         if(empty(self::$resultData)) {
             self::_setBkResultData($rentSaleStr);
         }
@@ -584,7 +579,7 @@ class SearchItemHelper extends MstBkSearch {
     }
 
     private function _setBkResultData($rentSaleStr) {
-        $query = $_GET;
+        $query = array_merge($_GET, $_POST);
         $param = [];
         foreach($query as $key => $value) {
             $value = self::_getAllImplode(",", $value);
@@ -832,7 +827,7 @@ class SearchItemHelper extends MstBkSearch {
         return $url;
     }
     private function _getParamUrl($keys) {
-        $query = $_GET;
+        $query = array_merge($_GET, $_POST);
         $result = [];
         foreach($keys as $key) {
             $pKey = self::BK_DATA_REALDATA[$key]['key'][0];
