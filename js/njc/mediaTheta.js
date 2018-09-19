@@ -16,7 +16,7 @@ $(function () {
     });
     var $thetaLinkBox = $('.thetaLinkBox');
     $('.theta-disp-wrap').click(function () {
-        if (window.matchMedia('(max-width:767px)').matches) {
+        if (window.matchMedia('(max-width:768px)').matches) {
             var $thetaBtn = $(this).find('.control-btn');
             if ($thetaBtn.hasClass('tmOpenIcon')) {
                 $thetaBtn.text('閉じる').addClass('tmCloseIcon').removeClass('tmOpenIcon');

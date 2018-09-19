@@ -78,13 +78,14 @@ $detailData = $searchManager->getBkDetailData($rentSaleStr, $id);
                                     $mailText = "物件名：{$bkName}%0D%0A" .
                                                 "住所：{$bkAddr}%0D%0A" .
                                                 "{$bkMoneyName}：{$bkMoney}%0D%0A";
+                                    $mailText = rawurlencode($mailText);
                                 ?>
                                 <button type="button" onclick="location.href='mailto:?subject=おすすめの物件&amp;body=<?= $mailText ?><?= $nowUrl ?>'" class="btn btn-info btn-sm sendarticle_m180 sendInfoMail">物件情報をメールで送る</button>
                             </div>
                         </div>
                         <div>
                             <?php
-                                $msg = "〇〇不動産のホームページで見つけた物件を送ります。%0D%0A{$mailText}";
+                                $msg = rawurlencode("〇〇不動産のホームページで見つけた物件を送ります。\r\n").$mailText;
                                 $lineUrl = "https://social-plugins.line.me/lineit/share?url={$nowUrl}&text={$msg}{$nowUrl}";
                             ?>
                             <button type="button" onclick="window.open('<?= $lineUrl; ?>');" class="lineimage btn btn-sm btn-sns d-inline-block mr-1">
@@ -136,19 +137,20 @@ $detailData = $searchManager->getBkDetailData($rentSaleStr, $id);
                     <div id="thumbs" style="display: none;" class="navigation col-md-5 d-none d-sm-block">
                         <ul class="thumbs clearfix row">
                             <?php foreach($detailData[$searchManager::BK_DATA_IMAGES] as $num => $imgData) { ?>
+                            <?php $comment = trim("{$bkName} {$searchManager->getImageCategoryName($imgData['type'])} {$imgData['comment']}"); ?>
                             <li class="col-xl-3 col-4 mt-1 mb-1">
-                                <a href="<?= $imgData['path']['large'] ?>" title="<?= $imgData['comment'] ?>" class="thumb main-image-link">
-                                    <img src="<?= $imgData['path']['large'] ?>" alt="<?= $imgData['comment'] ?>"/>
+                                <a href="<?= $imgData['path']['large'] ?>" title="<?= $comment; ?>" class="thumb main-image-link">
+                                    <img src="<?= $imgData['path']['large'] ?>" alt="<?= $comment; ?>"/>
                                 </a>
                                 <div class="caption">
                                     <div class="slideshow">
                                         <span class="image-wrapper">
                                             <div class="image-contents">
-                                                <div rel="cbviewer" href="<?= $imgData['path']['large'] ?>" title="<?= $imgData['comment'] ?>" class="advance-link">
-                                                    <img src="<?= $imgData['path']['large'] ?>" alt="<?= $imgData['comment'] ?>"/>
+                                                <div rel="cbviewer" href="<?= $imgData['path']['large'] ?>" title="<?= $comment; ?>" class="advance-link">
+                                                    <img src="<?= $imgData['path']['large'] ?>" alt="<?= $comment; ?>"/>
                                                 </div>
                                                 <div class="image-contents-bottom p-2 clearfix">
-                                                    <div class="image-description float-left"><?= $imgData['comment'] ?></div>
+                                                    <div class="image-description float-left"><?= $imgData['comment']; ?></div>
                                                     <div class="image-num float-right"><?= ($num + 1) ?> / <?= count($detailData[$searchManager::BK_DATA_IMAGES]) ?></div>
                                                 </div>
                                             </div>
@@ -202,17 +204,17 @@ $detailData = $searchManager->getBkDetailData($rentSaleStr, $id);
                         ],
                     ],
                     [
-                        "name" => "間取り/間取り内訳",
-                        "text" => [
-                            $searchManager::BK_DATA_MADORI,
-                            $searchManager::BK_DATA_MADORI_DETAIL,
-                        ],
-                    ],
-                    [
                         "name" => "管理費/修繕積立金",
                         "text" => [
                             $searchManager::BK_DATA_KANRI,
                             $searchManager::BK_DATA_SYUZEN,
+                        ],
+                    ],
+                    [
+                        "name" => "間取り/間取り内訳",
+                        "text" => [
+                            $searchManager::BK_DATA_MADORI,
+                            $searchManager::BK_DATA_MADORI_DETAIL,
                         ],
                     ],
                     [
@@ -291,15 +293,17 @@ $detailData = $searchManager->getBkDetailData($rentSaleStr, $id);
                 </table>
             </div>
             <?php
-                $imgPath = PATH_NOPHOTO_IMG;
+                $imgData = null;
                 if(!empty($detailData[$searchManager::BK_DATA_IMAGES])) {
-                    $imgPath = $searchManager->getMainImagePath($detailData[$searchManager::BK_DATA_IMAGES], $rentSaleStr);
+                    $imgData = $searchManager->getMainImagePath($detailData[$searchManager::BK_DATA_IMAGES], $rentSaleStr);
                 }
             ?>
-            <?php if(!empty($imgPath)) { ?>
+            <?php if(!empty($imgData)) { ?>
             <div class="col-md-6">
                 <div class="bk-detail-sub-image-wrapper p-2">
-                    <div class="bk-detail-sub-image-inner"><img src="<?= $imgPath; ?>"/></div>
+                    <div class="bk-detail-sub-image-inner">
+                        <img src="<?= $imgData['path']; ?>" alt="<?= $bkName . ' ' . $imgData['comment']; ?>" />
+                    </div>
                 </div>
             </div>
             <?php } ?>

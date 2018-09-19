@@ -34,7 +34,7 @@ var homeControlDiv;
         var check = (!isClick) ? isHide : !isHide;
         var header_h = $('.inner-header-contents-wrap').outerHeight(true);
         var panel_h = $(window).height() - header_h;
-        var isSmartPhone = window.matchMedia('(max-width:767px)').matches;
+        var isSmartPhone = window.matchMedia('(max-width:768px)').matches;
         panel_h = _getSpMinHeight(panel_h);
         /*
         if(check) {
@@ -76,7 +76,7 @@ var homeControlDiv;
         var header_h = $('.inner-header-contents-wrap').outerHeight(true);
         var wHeight = window.innerHeight ? window.innerHeight : $(window).height();
         var panel_h = wHeight - header_h;
-        var isSmartPhone = window.matchMedia('(max-width:767px)').matches || isSpPreview();
+        var isSmartPhone = window.matchMedia('(max-width:768px)').matches || isSpPreview();
         panel_h = _getSpMinHeight(panel_h);
         $('.mapMainPanel').css('height', panel_h + 'px');
         if (isSmartPhone) {
@@ -262,7 +262,7 @@ var homeControlDiv;
         });
         $(window).on('load resize', function () {
             checkSearchHide(false);
-            if (!window.matchMedia('(max-width:767px)').matches || isSpPreview()) {
+            if (!window.matchMedia('(max-width:768px)').matches || isSpPreview()) {
                 if (_isCreateDialog) {
                     _refineDiv.dialog('destroy');
                     $('body').removeClass('fixed').css({ 'top': 0 });
@@ -607,7 +607,7 @@ var homeControlDiv;
         elementAllBukken.click(function () {
             $.mapSearch.getAllBukken();
         });
-        if (window.matchMedia('(max-width:767px)').matches || isSpPreview()) {
+        if (window.matchMedia('(max-width:768px)').matches || isSpPreview()) {
             if (!isHide && $(window).height() < $(window).width()) {
                 $('.btnSearchHide').trigger('click');
             }
@@ -618,7 +618,7 @@ var homeControlDiv;
     };
     $.mapSearch.dialog = function () {
         var w = '500px';
-        if (window.matchMedia('(max-width:767px)').matches || isSpPreview()) {
+        if (window.matchMedia('(max-width:768px)').matches || isSpPreview()) {
             w = (isSpPreview()) ? '288px' : '90%';
         }
         $('#' + dialogId).dialog({

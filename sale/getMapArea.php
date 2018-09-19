@@ -52,6 +52,7 @@ include("../classes/SearchItemHelper.php");
                 <?php } ?>
             </ul>
             <?php } ?>
+            <div id="mapDialog-Btn-Back" class="btn btn-outline-secondary"><a target="_self" class="mapDialogBack">戻る</a></div>
         </div>
     </div>
 </div>

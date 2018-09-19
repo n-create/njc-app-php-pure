@@ -61,18 +61,31 @@ class SearchItemHelper extends MstBkSearch {
         return $cmt;
     }
 
+    public function getImageCategoryName ($type)
+    {
+        return !empty(self::IMG_CATEGORY_NAME[$type]) ? self::IMG_CATEGORY_NAME[$type] : "";
+    }
+
     public function getMainImagePath ($imagesData, $rentSaleStr)
     {
-        $result = PATH_NOPHOTO_IMG;
+        $result = [
+            "path" => PATH_NOPHOTO_IMG,
+            "comment" => "NO PHOTO",
+        ];
         $imgChecker = self::$imgChecker[$rentSaleStr];
+        $comment = "";
         foreach($imagesData as $data) {
             if(isset($imgChecker[$data['type']]) && empty($imgChecker[$data['type']])) {
                 $imgChecker[$data['type']] = $data['path']['large'];
+                $comment = $data["comment"];
             }
         }
         foreach($imgChecker as $imgType => $imgPath) {
             if(!empty($imgPath)) {
-                $result = $imgPath;
+                $result = [
+                    "path" => $imgPath,
+                    "comment" => trim(self::getImageCategoryName($imgType) . " " . $comment),
+                ];
                 break;
             }
         }
@@ -108,6 +121,43 @@ class SearchItemHelper extends MstBkSearch {
                         unset($result[$key]);
                     }
                 }
+            }
+        }
+        return $result;
+    }
+
+    private function _getBkCount($rsKey, $params) {
+        if(empty($params)) {
+            $params = [];
+            $query = array_merge($_GET, $_POST);
+            foreach($query as $key => $value) {
+                $value = self::_getAllImplode(",", $value);
+                if(!empty($value)) {
+                    $params[] = "{$key}={$value}";
+                }
+            }
+        }
+        $url = self::RELEASE_RESULT[$rsKey] . '?fields=synced_at&'. implode("&", $params) .'&sorts=synced&limit=1';
+        return (new JsonHelper())->getJsonData($url, true);
+    }
+
+    public function getBkCount($rentSaleStr, $isNowList, $params) {
+        $result = [];
+        $rsKey = $rentSaleStr;
+        if($isNowList) {
+            $metaData = self::getResultMetaData($rentSaleStr);
+            $result[$rsKey] = intval($metaData['total']);
+        } else {
+            $jsonData = self::_getBkCount($rsKey, $params);
+            if(isset($jsonData['meta']['total'])) {
+                $result[$rsKey] = intval($jsonData['meta']['total']);
+            }
+        }
+        if(RS_STR_RENT === $rsKey) {
+            $rsKey = self::RS_STR_NO_BUNDLE;
+            $jsonData = self::_getBkCount($rsKey, $params);
+            if(isset($jsonData['meta']['total'])) {
+                $result[$rsKey] = intval($jsonData['meta']['total']);
             }
         }
         return $result;
@@ -818,6 +868,9 @@ class SearchItemHelper extends MstBkSearch {
             break;
         case self::BK_DATA_CITY:
             $url .= "?fields=prefecture_name,prefecture_number,cities,cities.count,cities.city_name,cities.city_number";
+            break;
+        case self::BK_DATA_MAP:
+            $url .= "?map=1";
             break;
         case self::BK_DATA_AREA:
             $url .= "?fields=cities";

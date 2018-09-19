@@ -66,6 +66,7 @@ include("../classes/SearchItemHelper.php");
                             <option value="<?= $value; ?>"><?= $text; ?></option>
                             <?php } ?>
                         </select>
+                        <span class="afterSelectText station_toho">m以内</span>
                     </div>
                 </div>
             </div>

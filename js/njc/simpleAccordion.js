@@ -10,7 +10,7 @@ $(function () {
             var target = $(this).attr("toggle-class");
         }
         if (undefined !== $(this).attr("toggle-mobile-only")) {
-            if (window.matchMedia('(max-width:767px)').matches || 0 < $('body.preview.sp').length) {
+            if (window.matchMedia('(max-width:768px)').matches || 0 < $('body.preview.sp').length) {
                 $(this).toggleClass("active");
                 slideTarget(this, target);
                 if (-1 === $.inArray(target, ckrs)) {
@@ -37,7 +37,7 @@ $(function () {
         $(target).slideToggle(speed);
     }
     $(window).on('load resize', function () {
-        if (!window.matchMedia('(max-width:767px)').matches || 0 < $('body.preview.sp').length) {
+        if (!window.matchMedia('(max-width:768px)').matches || 0 < $('body.preview.sp').length) {
             for (var i = 0; i < ckrs.length; i++) {
                 if ("none" === $("." + ckrs[i]).css("display")) {
                     $("." + ckrs[i]).slideToggle(0);

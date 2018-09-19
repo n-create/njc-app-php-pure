@@ -12,7 +12,7 @@ include("../classes/SearchItemHelper.php");
     $searchManager = new SearchItemHelper();
     $result = [];
     $resultKey = $searchManager::RS_STR_NO_BUNDLE;
-    $jsonData = (new SearchItemHelper())->getBkResultData($resultKey);
+    $jsonData = $searchManager->getBkResultData($resultKey);
     $rentSaleStr = RS_STR_RENT;
 ?>
 <div class="mapBkList card <?= (1 >= count($jsonData)) ? 'noDotsSlider' : ''; ?>">
@@ -70,6 +70,7 @@ include("../classes/SearchItemHelper.php");
                 <div class="clearfix"></div>
             </div>
             <?php } ?>
+        </div>
         <div class="buttonBg"></div>
     </div>
 </div>
@@ -78,7 +79,7 @@ include("../classes/SearchItemHelper.php");
         var isSlick = false;
 
         function slickChange() {
-            if (window.matchMedia('(max-width:767px)').matches) {
+            if (window.matchMedia('(max-width:768px)').matches) {
                 if(!isSlick) {
                     $('#bkTinyList').slick({
                         slidesToShow: 1,

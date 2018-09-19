@@ -44,13 +44,17 @@ $rentSaleStr = RS_STR_SALE;
                     $nowLimit = (!isset($query['limit'])) ? 30 : $query['limit'];
                 ?>
                 <div class="row">
-                    <div class="bk-count col-md-4">
+                    <div class="bk-count col-md-6">
                         <p class="count-text m-0">
-                            <?php $meta = $searchManager->getResultMetaData($rentSaleStr); ?>
-                            該当物件数<span class="count"><?= (empty($meta['total']) ? 0 : $meta['total']) ?></span>件
+                            <?php $countData = $searchManager->getBkCount($rentSaleStr, true, []); ?>
+                            <?php $count = empty($countData[$searchManager::RS_STR_NO_BUNDLE]) ? $countData[$rentSaleStr] : $countData[$searchManager::RS_STR_NO_BUNDLE]; ?>
+                            該当物件数<span class="count"><?= $count; ?></span>件
+                            <?php if(!empty($countData[$searchManager::RS_STR_NO_BUNDLE])) { ?>
+                            (該当棟数<span class="count bundle"><?= $countData[$rentSaleStr]; ?></span>件)
+                            <?php } ?>
                         </p>
                     </div>
-                    <div class="bk-list-sort col-md-8 text-md-right text-center">
+                    <div class="bk-list-sort col-md-6 text-md-right text-center">
                         <select name="sorts" onchange="location.href='<?= $searchManager->getAndUnsetUrl("sorts") ?>&sorts='+this.options[this.selectedIndex].value" class="sort-order form-control">
                             <?php foreach($searchManager->getSortOrderList($rentSaleStr) as $value => $text) { ?>
                             <option value="<?= $value ?>" <?= ($value == $nowSort) ? 'selected="selected"' : ''; ?>><?= $text ?></option>
@@ -84,24 +88,12 @@ $rentSaleStr = RS_STR_SALE;
                                             $imgPath = $resultData[$searchManager::BK_DATA_IMAGES][0]['path']['large'];
                                         }
                                     ?>
-                                    <img src="<?= $imgPath; ?>"/>
+                                    <img src="<?= $imgPath; ?>" alt="<?= $title; ?>"/>
                                 </div>
                             </div>
                         </a>
                         <div class="bk-body card-body">
                             <div class="disp-contents">
-                                <?php
-                                    $cnt = 0;
-                                    $limit = 2;
-                                    $imgPath = PATH_NOPHOTO_IMG;
-                                    if(isset($resultData[$searchManager::BK_DATA_IMAGES][0]['path']['large'])) {
-                                        $imgPath = $resultData[$searchManager::BK_DATA_IMAGES][0]['path']['large'];
-                                    }
-                                    $json = [
-                                        'img'         => $imgPath,
-                                        'resultData'  => $resultData,
-                                    ];
-                                ?>
                                 <div class="crui_name badge badge-dark mb-1">
                                     <?= (empty($resultData[$searchManager::BK_DATA_BILDTYPE]['value']) ? '-' : $resultData[$searchManager::BK_DATA_BILDTYPE]['value']) ?>
                                 </div>
