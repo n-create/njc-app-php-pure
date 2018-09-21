@@ -1,0 +1,15 @@
+{
+    "name": "p-kumu/njc-api-php-pure",
+    "description": "Search Enging API Pure PHP",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/http": "^5.6"
+    },
+    "license": "Nihon Jyoho Create",
+    "authors": [
+        {
+            "name": "kumu",
+            "email": "p-kumu@n-create.co.jp"
+        }
+    ]
+}

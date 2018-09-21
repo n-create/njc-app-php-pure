@@ -1,0 +1,57 @@
+/**
+ * Copyright(c) 1997-2018 Nihon Jyoho Create Co.,Ltd.
+ */
+@charset "UTF-8";
+/* line 1, resources/assets/sass/njc/Errors/error.scss */
+* {
+  font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN-W3", "HiraKakuProN-W3", sans-serif;
+}
+
+/* line 6, resources/assets/sass/njc/Errors/error.scss */
+.error-wrap {
+  padding: 5px;
+  background-color: #EEE;
+  width: 570px;
+  margin: 0 auto;
+}
+
+/* line 11, resources/assets/sass/njc/Errors/error.scss */
+.error-wrap.mode-404 {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-left: -285px;
+}
+
+/* line 17, resources/assets/sass/njc/Errors/error.scss */
+.error-wrap p {
+  margin: 0 0 15px;
+}
+
+/* line 20, resources/assets/sass/njc/Errors/error.scss */
+.error-wrap .error-content-wrap {
+  padding: 40px 70px;
+  background-color: #F8F8F8;
+  border: 1px solid #FFF;
+}
+
+/* line 24, resources/assets/sass/njc/Errors/error.scss */
+.error-wrap .error-content-wrap .h2 {
+  margin: 0 0 20px 0;
+}
+
+/* line 28, resources/assets/sass/njc/Errors/error.scss */
+.error-wrap .error-content-wrap .link-contents p {
+  display: inline-block;
+  margin: 0 35px 0 0;
+}
+
+/* line 35, resources/assets/sass/njc/Errors/error.scss */
+table.cake-sql-log {
+  border: 1px solid #BBB;
+}
+
+/* line 37, resources/assets/sass/njc/Errors/error.scss */
+table.cake-sql-log th, table.cake-sql-log td {
+  border: 1px solid #BBB;
+}

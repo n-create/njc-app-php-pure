@@ -1,0 +1,26 @@
+/**
+ * Copyright(c) 1997-2018 Nihon Jyoho Create Co.,Ltd.
+ */
+@charset "UTF-8";
+/* line 1, resources/assets/sass/njc/colorbox-custom.scss */
+#cboxTitle {
+  color: #333;
+  font-size: 14px;
+  font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN-W3", "HiraKakuProN-W3", sans-serif;
+  text-overflow: ellipsis;
+  padding-right: 20px;
+  overflow: hidden;
+  text-align: left;
+}
+
+/* line 10, resources/assets/sass/njc/colorbox-custom.scss */
+#cboxClose {
+  transition: all 0s ease;
+}
+
+/* line 13, resources/assets/sass/njc/colorbox-custom.scss */
+#cboxPrevious,
+#cboxNext {
+  outline: none;
+  transition: none;
+}
