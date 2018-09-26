@@ -75,9 +75,9 @@ $detailData = $searchManager->getBkDetailData($rentSaleStr, $id);
                                             $bkMoney .= $money['value'];
                                     }
                                     $bkMoneyName = (RS_STR_RENT === $rentSaleStr) ? '賃料' : '価格' ;
-                                    $mailText = "物件名：{$bkName}%0D%0A" .
-                                                "住所：{$bkAddr}%0D%0A" .
-                                                "{$bkMoneyName}：{$bkMoney}%0D%0A";
+                                    $mailText = "物件名：{$bkName}\r\n" .
+                                                "住所：{$bkAddr}\r\n" .
+                                                "{$bkMoneyName}：{$bkMoney}\r\n";
                                     $mailText = rawurlencode($mailText);
                                 ?>
                                 <button type="button" onclick="location.href='mailto:?subject=おすすめの物件&amp;body=<?= $mailText ?><?= $nowUrl ?>'" class="btn btn-info btn-sm sendarticle_m180 sendInfoMail">物件情報をメールで送る</button>
@@ -504,7 +504,7 @@ $detailData = $searchManager->getBkDetailData($rentSaleStr, $id);
                 <div class="detail-contact-info-inner">
                     <div class="info-title card-header">この物件のお問い合わせ</div>
                     <div class="card-body">
-                        <div class="info-message mb-2">お電話でお気軽にお問い合わせください。お電話でのお問い合わせの際は、「物件お問い合わせ番号」をお伝えいただけますとスムーズにご案内することができます。</div>
+                        <div class="info-message mb-2">お電話でお気軽にお問い合わせください。「物件お問い合わせ番号」をお伝えいただけますとスムーズにご案内することができます。</div>
                         <div class="row align-items-center">
                             <div class="col-md-5">
                                 <div class="info-num p-3 bg-white text-center mb-sm-0 mb-2">
@@ -906,7 +906,7 @@ $detailData = $searchManager->getBkDetailData($rentSaleStr, $id);
             <script type="text/javascript" src="/js/njc/simpleAccordion.js?_=<?= date('Ymdhis'); ?>"></script>
             <!------------ 詳細 物件情報詳細 End ------------>
         </div>
-        |<?php if(!empty($detailData[$searchManager::BK_DATA_MAPOPEN])) { ?>
+        <?php if(!empty($detailData[$searchManager::BK_DATA_MAPOPEN])) { ?>
         <div class="bk-detail-map mb-md-5 mb-4">
             <!------------ 詳細 地図 Start ------------>
             <?php

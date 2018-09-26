@@ -14,7 +14,7 @@ $rentSaleStr = RS_STR_SALE;
 ?>
 <div class="container resultBox <?= $rentSaleStr; ?>">
     <div class="headTitle">
-        <div class="h2" data-subtitle="LIST">賃貸物件一覧</div>
+        <div class="h2" data-subtitle="LIST">売買物件一覧</div>
     </div>
     <div class="bk-result-header mb-3">
         <div class="header-title">
