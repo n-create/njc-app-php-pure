@@ -154,7 +154,7 @@ class MstBkSearch {
     const BK_DATA_TOKKI = 'tokki';
     const BK_DATA_BIKO = 'biko';
     const BK_DATA_RAWHOREI = 'horei';
-    const BK_DATA_NEWBILD = 'new_bilding';
+    const BK_DATA_NEWBILD = 'new_building';
     const BK_DATA_NEWCOME = 'created_within';
     const BK_DATA_EKITOHO = 'station_toho';
     const BK_DATA_FREEWORD = 'freeword';

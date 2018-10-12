@@ -731,6 +731,41 @@ img {
   color: #ffffff;
 }
 
+/* line 579, resources/assets/sass/njc/_common.scss */
+.public-body ul.bk-icons {
+  margin-bottom: 5px;
+}
+
+/* line 581, resources/assets/sass/njc/_common.scss */
+.public-body ul.bk-icons .bk-icon {
+  width: 70px;
+  padding: 4px 0;
+}
+
+/* line 588, resources/assets/sass/njc/_common.scss */
+.public-body .bk-list-body ul.bk-icons {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+/* line 593, resources/assets/sass/njc/_common.scss */
+.public-body .bk-list-body ul.bk-icons .bk-icon {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/* line 598, resources/assets/sass/njc/_common.scss */
+.public-body .bk-list-body ul.bk-icons .bk-icon > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* line 582, resources/assets/sass/njc/_common.scss */
 .public-body .bk-detail-header .bk-detail-top-data .bk-detail-top-title-area .bk-detail-title {
   display: inline-block;

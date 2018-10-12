@@ -22,6 +22,19 @@ $detailData = $searchManager->getBkDetailData($rentSaleStr, $id);
             $moneyText = (RS_STR_RENT === $rentSaleStr) ? '賃料' : '価格';
         ?>
         <div class="bk-detail-top-data mb-3">
+            <div class="bk-detail-status-icons">
+              <ul class="bk-icons">
+                <?php if($searchManager->isNewArrive($detailData)) { ?>
+                  <li class="bk-icon status-new badge badge-warning"><span class="status-new-conts">新着</span></li>
+                <?php } ?>
+                <?php if($searchManager->isNewUpdate($detailData)) { ?>
+                  <li class="bk-icon status-update badge badge-primary"><span class="status-update-conts">更新</span></li>
+                <?php } ?>
+                <?php if($searchManager->isNewBuild($detailData)) { ?>
+                  <li class="bk-icon status-building badge badge-success"><span class="status-building-conts">新築</span></li>
+                <?php } ?>
+              </ul>
+            </div>
             <div class="bk-detail-top-title-area mb-1">
                 <div class="bk-detail-crui-name badge badge-dark mr-1 mb-1">
                     <?= $searchManager->getAndCheckBkData($detailData, $searchManager::BK_DATA_BILDTYPE, null); ?>

@@ -43,6 +43,36 @@ class SearchItemHelper extends MstBkSearch {
     public static $resultData = [];
     public static $searchData = [];
 
+    public function checkDateDiff($targetDate, $diff) {
+        $targetTime = strtotime($targetDate);
+        $nowTime = strtotime($diff);
+        return ($nowTime <= $targetTime);
+    }
+
+    public function isNewArrive($resultData) {
+        $result = false;
+        if(!empty($resultData[self::BK_DATA_CREATED])) {
+            $result = self::checkDateDiff($resultData[self::BK_DATA_CREATED], "-1 week");
+        }
+        return $result;
+    }
+
+    public function isNewUpdate($resultData) {
+        $result = false;
+        if(!empty($resultData[self::BK_DATA_UPDATED])) {
+            $result = self::checkDateDiff($resultData[self::BK_DATA_UPDATED], "-1 week");
+        }
+        return $result;
+    }
+
+    public function isNewBuild($resultData) {
+        $result = false;
+        if(isset($resultData[self::BK_DATA_NEWBILD]) && true === $resultData[self::BK_DATA_NEWBILD]) {
+            $result = true;
+        }
+        return $result;
+    }
+
     public function getPrComment($resultData, $isSingle)
     {
         $cmt = [];
