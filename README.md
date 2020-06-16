@@ -11,7 +11,7 @@
 ## 利用方法
 * config.default.php を config.php とリネームしてください。
 * 提供されたAPIキーをconfig.php内の定数API_TOKEN_KEYに設定してください。
-* 提供されたAPIドメイン（'https://estate.njcapi.jp/api/v1/web'）　をconfig.php内の定数API_DOMAINに設定してください。
+* 提供されたAPIドメイン（https://estate.njcapi.jp/api/v1/web）　をconfig.php内の定数API_DOMAINに設定してください。
 * Google Map API を使用する場合はGoogle指定のAPIキーをconfig.php内の定数GOOGLE_MAPS_KEYに設定してください。
 
 ## サンプルプログラムの動作環境
