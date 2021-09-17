@@ -654,8 +654,7 @@ class MstBkSearch {
     ];
     public static $buildAgeKbn = [
         '' => '指定しない',
-        1 => '新築',
-        2 => '中古'
+        1 => '新築'
     ];
     public static $residentsNumber = [
         1 => '１人',
