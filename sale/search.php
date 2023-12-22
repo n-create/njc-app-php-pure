@@ -727,6 +727,12 @@ include("../classes/SearchItemHelper.php");
                                                     <span>リフォーム</span>
                                                 </label>
                                             </li>
+                                            <li class="sub kodawari">
+                                                <label class="form-control">
+                                                    <input type="checkbox" name="setubi_options[69][]" value="69_01" class="child kodawari"/>
+                                                    <span>インターネット使用料不要</span>
+                                                </label>
+                                            </li>
                                         </ul>
                                     </dd>
                                 </dl>
