@@ -331,6 +331,12 @@ include("../classes/SearchItemHelper.php");
                                                                     <span>冷蔵庫あり</span>
                                                                 </label>
                                                             </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[78][]" value="78_01" class="child kodawari"/>
+                                                                    <span>カウンターキッチン</span>
+                                                                </label>
+                                                            </li>
                                                         </ul>
                                                     </dd>
                                                 </dl>
@@ -478,6 +484,30 @@ include("../classes/SearchItemHelper.php");
                                                                     <span>室内洗濯機置場</span>
                                                                 </label>
                                                             </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[72][]" value="72_01" class="child kodawari"/>
+                                                                    <span>家具・家電付</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[80][]" value="80_01" class="child kodawari"/>
+                                                                    <span>家具付</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[81][]" value="81_01" class="child kodawari"/>
+                                                                    <span>家電付</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[77][]" value="77_01" class="child kodawari"/>
+                                                                    <span>シューズボックス</span>
+                                                                </label>
+                                                            </li>
                                                         </ul>
                                                     </dd>
                                                 </dl>
@@ -594,6 +624,42 @@ include("../classes/SearchItemHelper.php");
                                                                     <span>分譲賃貸</span>
                                                                 </label>
                                                             </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="jyoken_options[31][]" value="31_01" class="child kodawari"/>
+                                                                    <span>LGBTフレンドリー</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="jyoken_options[34][]" value="34_01" class="child kodawari"/>
+                                                                    <span>猫可</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="jyoken_options[34][]" value="34_02" class="child kodawari"/>
+                                                                    <span>猫相談可</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="jyoken_options[36][]" value="36_01" class="child kodawari"/>
+                                                                    <span>小型犬可</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="jyoken_options[36][]" value="36_02" class="child kodawari"/>
+                                                                    <span>小型犬相談可</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="jyoken_options[35][]" value="35_01" class="child kodawari"/>
+                                                                    <span>大型犬可</span>
+                                                                </label>
+                                                            </li>
                                                         </ul>
                                                     </dd>
                                                 </dl>
@@ -611,6 +677,18 @@ include("../classes/SearchItemHelper.php");
                                                                 <label class="form-control">
                                                                     <input type="checkbox" name="setubi_options[39][]" value="39_01" class="child kodawari"/>
                                                                     <span>TVドアホン</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[75][]" value="75_01" class="child kodawari"/>
+                                                                    <span>防犯カメラ</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[76][]" value="76_01" class="child kodawari"/>
+                                                                    <span>セキュリティ会社加入済</span>
                                                                 </label>
                                                             </li>
                                                         </ul>
@@ -686,6 +764,18 @@ include("../classes/SearchItemHelper.php");
                                                                     <span>給湯</span>
                                                                 </label>
                                                             </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[73][]" value="73_01" class="child kodawari"/>
+                                                                    <span>防音設備</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[74][]" value="74_01" class="child kodawari"/>
+                                                                    <span>敷地内ゴミ置き場有り</span>
+                                                                </label>
+                                                            </li>
                                                         </ul>
                                                     </dd>
                                                 </dl>
@@ -758,6 +848,60 @@ include("../classes/SearchItemHelper.php");
                                                                 <label class="form-control">
                                                                     <input type="checkbox" name="setubi_options[41][]" value="41_01" class="child kodawari"/>
                                                                     <span>住宅性能保証付</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[69][]" value="69_01" class="child kodawari"/>
+                                                                    <span>インターネット使用料不要</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[70][]" value="70_01" class="child kodawari"/>
+                                                                    <span>初期費用クレジット決済可</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[71][]" value="71_01" class="child kodawari"/>
+                                                                    <span>賃料クレジット決済可</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[79][]" value="79_01" class="child kodawari"/>
+                                                                    <span>メゾネット</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[82][]" value="82_01" class="child kodawari"/>
+                                                                    <span>オンライン内見</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[83][]" value="83_01" class="child kodawari"/>
+                                                                    <span>オンライン相談</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="setubi_options[84][]" value="84_01" class="child kodawari"/>
+                                                                    <span>IT重説対応物件</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="jyoken_options[32][]" value="32_01" class="child kodawari"/>
+                                                                    <span>24時間ゴミ出し</span>
+                                                                </label>
+                                                            </li>
+                                                            <li class="sub kodawari">
+                                                                <label class="form-control">
+                                                                    <input type="checkbox" name="jyoken_options[33][]" value="33_01" class="child kodawari"/>
+                                                                    <span>DIY可</span>
                                                                 </label>
                                                             </li>
                                                         </ul>
