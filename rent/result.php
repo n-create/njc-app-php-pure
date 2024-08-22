@@ -224,13 +224,13 @@ $rentSaleStr = RS_STR_RENT;
                                                                 ];
                                                             ?>
                                                             <?php foreach($dispItem as $key) { ?>
-                                                            <?php if(empty($resultData[$key])) { continue; } ?>
+                                                            <?php if(empty($data[$key])) { continue; } ?>
                                                             <dl class="<?= $key; ?>">
                                                                 <dt class="title list-inline-item">
                                                                     <?= $searchManager->getBkItemName($rentSaleStr, $key) ?>
                                                                 </dt>
                                                                 <?php if($searchManager::BK_DATA_MONEY === $key) { ?>
-                                                                <?php $money = $resultData[$key]; ?>
+                                                                <?php $money = $data[$key]; ?>
                                                                 <dd class="value list-inline-item">
                                                                     <?php $money = intval($money); ?>
                                                                     <?php if(!empty($money)) { ?>
@@ -244,11 +244,11 @@ $rentSaleStr = RS_STR_RENT;
                                                                 <?php } else { ?>
                                                                 <dd class="value list-inline-item">
                                                                     <?php
-                                                                        $text = $searchManager->getAndCheckBkData($resultData, $key, null);
+                                                                        $text = $searchManager->getAndCheckBkData($data, $key, null);
                                                                         if($searchManager::BK_DATA_AREASIZE === $key) {
                                                                             $area_keisoku = "";
-                                                                            if(!empty($resultData[$searchManager::BK_DATA_AREASIZE_KEI]['value'])) {
-                                                                                    $area_keisoku = "（{$resultData[$searchManager::BK_DATA_AREASIZE_KEI]['value']}）";
+                                                                            if(!empty($data[$searchManager::BK_DATA_AREASIZE_KEI]['value'])) {
+                                                                                    $area_keisoku = "（{$data[$searchManager::BK_DATA_AREASIZE_KEI]['value']}）";
                                                                             }
                                                                             $text = number_format($text, 2) . "㎡{$area_keisoku}(" . (floor($text * 0.3025 * 100) / 100) . "坪)";
                                                                         } else {
